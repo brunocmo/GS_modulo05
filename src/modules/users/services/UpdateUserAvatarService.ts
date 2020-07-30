@@ -1,6 +1,3 @@
-import { getRepository } from 'typeorm';
-import path from 'path';
-import fs from 'fs';
 import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
@@ -30,8 +27,6 @@ class UpdateUserAvatarService {
 
 
   public async execute({ user_id, avatarFilename }: IRequest): Promise<User> {
-    const usersRepository = getRepository(User);
-
     const user = await this.usersRepository.findById(user_id);
 
     if (!user) {
