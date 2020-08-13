@@ -12,6 +12,6 @@ export default class FakeMailProvider implements IMailProvider {
     this.messages.push({
       to,
       body,
-    })
+    });
   }
 }

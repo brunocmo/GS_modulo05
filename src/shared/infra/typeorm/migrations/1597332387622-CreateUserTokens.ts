@@ -16,6 +16,7 @@ export default class CreateUserTokens1597332387622 implements MigrationInterface
           {
             name: 'token',
             type: 'uuid',
+            isPrimary: true,
             generationStrategy: 'uuid',
             default: 'uuid_generate_v4()',
           },
@@ -42,10 +43,10 @@ export default class CreateUserTokens1597332387622 implements MigrationInterface
             columnNames: ['user_id'],
             onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
-          }
-        ]
+          },
+        ],
       }),
-      )
+      );
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
