@@ -15,7 +15,7 @@ interface IRequest {
 }
 
 @injectable()
-class UpdateProfile {
+class UpdateProfileService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
@@ -25,7 +25,6 @@ class UpdateProfile {
   ) {
 
   }
-
 
   public async execute({ user_id, name, email, password, old_password }: IRequest): Promise<User> {
     const user = await this.usersRepository.findById(user_id);
@@ -64,4 +63,4 @@ class UpdateProfile {
   }
 }
 
-export default UpdateProfile;
+export default UpdateProfileService;
