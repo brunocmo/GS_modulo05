@@ -5,13 +5,13 @@ let fakeAppointmentsRepository: FakeAppointmentsRepository;
 let listProviderMonthAvailability: ListProviderMonthAvailabilityService;
 
 
-describe('ListProviders', () => {
+describe('ListProvidersMonthAvailability', () => {
   beforeEach(() => {
     fakeAppointmentsRepository = new FakeAppointmentsRepository();
     listProviderMonthAvailability = new ListProviderMonthAvailabilityService(fakeAppointmentsRepository);
   });
 
-  it('should be able to listthe month availability from provider', async() => {
+  it('should be able to list the month availability from provider', async() => {
     await fakeAppointmentsRepository.create({
       provider_id: 'user',
       date: new Date(2020, 4, 20, 8, 0, 0),
